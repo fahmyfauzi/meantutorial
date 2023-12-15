@@ -8,7 +8,8 @@ require('colors');
 
 //import files
 const connectDB = require('./app/config/db');
-const User = require('./app/models/user');
+const routesApi = require('./app/routes/api.js');
+const path = require('path');
 
 const app = express();
 
@@ -20,28 +21,13 @@ connectDB();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
 
 //route
-app.post('/users', async (req, res) => {
-  const { username, email, password } = req.body;
+app.use('/api/v1/users', routesApi);
 
-  if (!username || !email || !password) {
-    res.send('Ensure username, email, and password were provide');
-  }
-
-  const existingEmail = await User.findOne({ email });
-  const existingUsername = await User.findOne({ username });
-
-  if (existingUsername || existingEmail) {
-    return res.status(400).send('Email or password already');
-  }
-
-  const user = await User.create({ username, email, password });
-  res.json({
-    status: 'success',
-    message: 'success created user',
-    data: user,
-  });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
 });
 
 const port = process.env.PORT;
