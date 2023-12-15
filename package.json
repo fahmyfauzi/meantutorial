@@ -19,9 +19,12 @@
   "author": "CSM IT",
   "license": "ISC",
   "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.20.2",
     "colors": "^1.4.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
     "mongoose": "^8.0.3",
     "morgan": "^1.10.0"
   },
