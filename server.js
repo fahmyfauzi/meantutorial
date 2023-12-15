@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 //route
-app.use('/api/v1/users', routesApi);
+app.use('/api', routesApi);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/app/views/index.html'));

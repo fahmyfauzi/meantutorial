@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
-router.post('/', async (req, res) => {
+router.post('/users', async (req, res) => {
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
