@@ -61,4 +61,32 @@ router.post('/authenticate', async (req, res) => {
     token,
   });
 });
+
+router.use((req, res, next) => {
+  const token = req.body.token || req.body.query || req.headers['x-access-token'];
+
+  if (token) {
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+      if (err) {
+        res.json({
+          success: false,
+          message: 'Token invalid',
+        });
+      } else {
+        req.decoded = decoded;
+        next();
+      }
+    });
+  } else {
+    res.json({
+      success: false,
+      message: 'No token provided!',
+    });
+  }
+});
+
+router.post('/me', (req, res) => {
+  console.log(req.decoded);
+  res.send(req.decoded);
+});
 module.exports = router;
