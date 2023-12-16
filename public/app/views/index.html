@@ -1,12 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index</title>
+
+    <!-- Angular Files -->
+    <script src="../../assets/js/angular_1.8.2/angular.js"></script>
+    <script src="../../assets/js/angular_1.8.2/angular-route.js"></script>
+    <script src="../../assets/js/angular_1.8.2/angular-animate.js"></script>
+
+    <!-- Angular Config/Routes -->
+    <script src="app/app.js"></script>
+    <script src="app/routes.js"></script>
+
+    <!-- Angular Controllers -->
+    <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+
+    <!-- Angular Services -->
+    <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom.css" />
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../../assets/css/bootstrap_5.3/bootstrap.min.css" />
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom.css" />
+
+    <!-- Animated.CSS CDN -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+
+    <title>MEAN COURSE</title>
   </head>
 
-  <body>
-    <h1>HELLO FROM INDEX</h1>
+  <body ng-app="userApp" ng-controller="mainCtrl as main">
+    <!-- START NAVBAR -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">MeanApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/register">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAVBAR -->
+
+    <!-- START MAIN -->
+    <div class="container" role="main">
+      <!-- <div class="jumbotron bg-primary-subtle rounded-bottom-2 p-5">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4" />
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      </div> -->
+      <div class="" ng-view></div>
+    </div>
+    <!-- END MAIN -->
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/bootstrap_5.3/bootstrap.min.js"></script>
+
+    <!-- JQuery -->
+    <script src="../../assets/js/jquery.min.js"></script>
+
+    <!-- JqueryCDN -->
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+      integrity="sha512-U6K1YLIFUWcvuw5ucmMtT9HH4t0uz3M366qrF5y4vnyH6dgDzndlcGvH/Lz5k8NFh80SN95aJ5rqGZEdaQZ7ZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
   </body>
 </html>

@@ -1,0 +1,27 @@
+main {
+  padding-top: 30px;
+}
+
+/* HEADER */
+header.navbar {
+  border-radius: 0;
+}
+
+/* NG ANIMATE */
+/* show and hide */
+.show-hide-message.ng-hide-remove-active {
+  animation: show-hide-animation 0.3s both ease;
+}
+
+@keyframes show-hide-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    /* Add other initial styles if needed */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    /* Add other final styles if needed */
+  }
+}
