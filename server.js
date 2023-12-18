@@ -10,12 +10,15 @@ require('colors');
 const connectDB = require('./app/config/db');
 const routesApi = require('./app/routes/api.js');
 const path = require('path');
+var passport = require('passport');
+require('./app/passport/passport.js');
 
 const app = express();
 
 //setup
 dotenv.config();
 connectDB();
+require('./app/passport/passport.js')(app, passport);
 
 //middleware
 app.use(morgan('dev'));

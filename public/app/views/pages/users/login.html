@@ -2,33 +2,34 @@
   <h1>User Login</h1>
 </div>
 
-<form ng-submit="register.regUser(regData);">
+<form ng-submit="main.doLogin(loginData);">
   <!-- username -->
   <label>Username :</label>
-  <input class="form-control" type="text" name="username" id="username" placeholder="please enter username" ng-model="register.regData.username" />
+  <input class="form-control" type="text" name="username" id="username" placeholder="please enter username" ng-model="main.loginData.username" />
   <br />
   <!-- password -->
   <label>Password :</label>
-  <input class="form-control" type="password" name="password" id="password" placeholder="please enter password" ng-model="register.regData.password" />
+  <input class="form-control" type="password" name="password" id="password" placeholder="please enter password" ng-model="main.loginData.password" />
   <br />
-  <button class="btn btn-primary">Login</button>
+  <button class="btn btn-primary">Login</button>&nbsp;
+  <a href="/auth/facebook" target="_blank"><button type="button" class="btn btn-success">Facebook</button></a>
 </form>
 
 <br />
 
-<div class="justify-content-center d-grid bg-primary-subtle p-4 rounded-3" ng-show="register.loading">
+<div class="justify-content-center d-grid bg-primary-subtle p-4 rounded-3" ng-show="main.loading">
   <div class="spinner-border text-primary" style="margin-left: 13px" role="status"></div>
   <span class="pt-2">Loading...</span>
 </div>
 
 <br />
 
-<div class="row show-hide-message" ng-show="register.successMsg">
-  <div class="alert alert-success">{{ register.successMsg }}</div>
+<div class="row show-hide-message" ng-show="main.successMsg">
+  <div class="alert alert-success">{{ main.successMsg }}</div>
 </div>
 
 <br />
 
-<div class="row show-hide-message" ng-show="register.errorMsg">
-  <div class="alert alert-danger">{{ register.errorMsg }}</div>
+<div class="row show-hide-message" ng-show="main.errorMsg">
+  <div class="alert alert-danger">{{ main.errorMsg }}</div>
 </div>
